@@ -1,0 +1,25 @@
+<nav class="nav">
+  <h1><a routerLink="">শব্দবাজার</a> </h1>
+  <div *ngIf="menuType === 'default'" class="search-bar">
+    <input type="text" placeholder="Search Your Book">
+    <button>Search</button>
+  </div>
+  <div [ngSwitch]="menuType" >
+  <ul *ngSwitchCase="'default'"  class="nav-links">
+      <li>
+        <a routerLink="/">Home</a>
+        <a routerLink="/seller-auth">Seller</a>
+        <a routerLink="#">Log in</a>
+        <a routerLink="#">Cart (0)</a> 
+    </ul>
+   
+    <ul *ngSwitchCase="'seller'"  class="nav-links" >
+      <li>
+        <a routerLink="seller-add-product">Add Book</a>
+        <a routerLink="seller-home">Book List</a>
+        <a (click)="logout()">Log Out</a> 
+        <a routerLink="">{{sellerName | titlecase}}</a> 
+      </li>
+    </ul>
+  </div>
+</nav>

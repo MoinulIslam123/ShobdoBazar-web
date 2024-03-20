@@ -1,0 +1,45 @@
+
+
+<ngb-carousel class="container" *ngIf="popularBook">
+  <ng-template *ngFor="let item of popularBook" ngbSlide>
+    <!-- Set the background color of each NgbSlide to black -->
+    <div class="ngb-slide-content">
+      <div class="picsum-img-wrapper">
+        <img class="product-header-image" src="{{ item.image }}" alt="Random slide image" />
+      </div>
+      <div class="carousel-caption">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <!-- Example icon with custom color -->
+        <i class="my-icon fas fa-star"></i>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+
+<div class="product-list-wrapper">
+  <h1 class="section-title">Trendy Products</h1>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let item of trendyBooks">
+      <div class="product-item">
+        <img class="product-image" src="{{ item.image }}" alt="{{ item.name }}">
+        <div class="product-details">
+          <h6 class="product-name">{{ item.name }}</h6>
+          <div class="product-price">
+            <h6>Price: ${{ item.price }}</h6>
+          </div>
+          <div class="product-category">
+            <h6>Category: {{ item.category }}</h6>
+          </div>
+        </div>
+        <div class="product-actions">
+          <a class="btn-details" routerLink="/details/{{ item.id }}">View Details</a>
+          <button class="btn-add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+

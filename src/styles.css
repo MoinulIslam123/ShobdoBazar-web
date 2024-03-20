@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ece4e4;
+}
+:root {
+  --primary-color:#AFEEEE; /* Define primary color variable */
+}
+
+/* Use primary color for various elements */
+/* .btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+} */
+/* .container {
+  margin-left: 3%;
+  margin-right: 3%;
+} */
+
+.common-form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: auto;
+}
+
+.form-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.carousel-caption {
+  background-color: #0000007d;
+  border-radius: 10px;
+  margin-top: -50px;
+}

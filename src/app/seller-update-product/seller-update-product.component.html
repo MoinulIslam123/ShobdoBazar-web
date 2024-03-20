@@ -1,0 +1,55 @@
+<div class="add-product">
+  <h1>Update Product</h1>
+  <p>{{ updateBookMessage }}</p>
+  <form
+    #addProduct="ngForm"
+    (ngSubmit)="submit(addProduct.value)"
+    class="common-form"
+  >
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Book Name"
+      name="name"
+      ngModel="{{bookData?.name}}"
+    />
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Book Price"
+      name="price"
+           ngModel="{{bookData?.price}}"
+    />
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Book Category"
+      name="category"
+            ngModel="{{bookData?.category}}"
+    />
+    <input
+      type="date"
+      class="form-input"
+      placeholder="Enter Published Date"
+      name="date"
+            ngModel="{{bookData?.date}}"
+    />
+
+    <textarea
+      type="text"
+      class="form-input"
+      placeholder="Enter Book Description"
+      name="description"
+           ngModel="{{bookData?.description}}"
+    ></textarea>
+
+    <input
+      type="text"
+      class="form-input"
+      placeholder="Enter Book Image "
+      name="image"
+           ngModel="{{bookData?.image}}"
+    />
+    <button class="form-button">Update Book</button>
+  </form>
+</div>
