@@ -1,0 +1,22 @@
+<div class="row product-details" *ngIf="bookData">
+  <div class="col-sm-6">
+    <img class="product-img" [src]="bookData.image" alt="">
+  </div>
+  <div class="col-sm-6">
+    <div class="details">
+      <h1>{{bookData.name}}</h1>
+      <h3>Price: {{bookData.price}}</h3>
+      <h3>Published Date: {{bookData.date}}</h3>
+      <h6>Category: {{bookData.category}}</h6>
+      <h6>Description: {{bookData.description}}</h6>
+      <button class="form-button buy-button">Buy Now</button>
+      <button *ngIf="removeCart" class="form-button" (click)=" removeToCart(bookData.id)"> Remove to Cart </button>
+        <button *ngIf="!removeCart" class="form-button" (click)="addCart()">Add to Cart</button>
+ <div class="quantity-group">
+  <button (click)="handleQuantity('min')" class="quantity-button">-</button>
+  <input type="text" [value]="productQuantity" class="quantity-input" readonly>
+  <button (click)="handleQuantity('plus')" class="quantity-button">+</button>
+</div>
+    </div>
+  </div>
+</div>

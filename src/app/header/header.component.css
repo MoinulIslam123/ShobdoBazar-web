@@ -74,7 +74,48 @@ h1 a {
   text-decoration: underline;
 }
 
+/* Style the <ul> element */
+ul {
+ list-style-type: none;
+  padding: 0;
+}
 
+/* Style the <li> elements */
+ul li {
+  display: inline-block;
+  margin-right: 20px;
 
+}
 
-	
+/* Style the <a> elements */
+ul li a {
+   text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+
+/* Hover effect for <a> elements */
+ul li a:hover {
+  background-color: #3b6350;
+  color: #fff;
+}
+
+/* Style the last <a> element (Cart) differently */
+ul li a:last-child {
+  border: none;
+}
+
+/* Style the Cart text */
+ul li a:last-child span {
+  color: #ff4500; /* Adjust the color as needed */
+}
+
+/* Add some margin to the list */
+ul li {
+  margin: 0 10px;
+}

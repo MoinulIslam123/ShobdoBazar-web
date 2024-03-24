@@ -1,24 +1,46 @@
 <nav class="nav">
-  <h1><a routerLink="">শব্দবাজার</a> </h1>
+  <h1><a routerLink="">শব্দবাজার</a></h1>
   <div *ngIf="menuType === 'default'" class="search-bar">
-    <input type="text" placeholder="Search Your Book">
+    <input
+      type="text"
+      #searchInput
+      (keyup)="searchBook($event)"
+      placeholder="Search Book"
+    />
     <button>Search</button>
-  </div>
-  <div [ngSwitch]="menuType" >
-  <ul *ngSwitchCase="'default'"  class="nav-links">
-      <li>
-        <a routerLink="/">Home</a>
-        <a routerLink="/seller-auth">Seller</a>
-        <a routerLink="#">Log in</a>
-        <a routerLink="#">Cart (0)</a> 
+    <ul class="suggested-search" *ngIf="searchResult">
+      <li *ngFor="let item of searchResult">
+        <a>{{ item.name }} </a>
+      </li>
     </ul>
-   
-    <ul *ngSwitchCase="'seller'"  class="nav-links" >
+  </div>
+  <div [ngSwitch]="menuType">
+    <ul *ngSwitchCase="'default'" class="nav-links">
+      <li>
+        <a routerLink="/seller-auth">Seller</a>
+        <a routerLink="/">Home</a>
+        <a routerLink="/user-auth">Log-in/Sign-Up</a>
+        <a routerLink="#">Cart ({{cartItem}})</a>
+      </li>
+    </ul>
+
+    <ul *ngSwitchCase="'user'">
+      <li>
+        <a routerLink="seller-auth">Seller</a>
+        <a routerLink="/">Home</a>
+        <a routerLink="my-orders">My Orders</a>
+        <a routerLink="#">Cart ({{cartItem}})</a>
+        <a routerLink="user-auth">{{ userName | titlecase }}</a>
+        <a (click)="userLogout()">Logout</a>
+      </li>
+    </ul>
+
+    <ul *ngSwitchCase="'seller'" class="nav-links">
       <li>
         <a routerLink="seller-add-product">Add Book</a>
         <a routerLink="seller-home">Book List</a>
-        <a (click)="logout()">Log Out</a> 
-        <a routerLink="">{{sellerName | titlecase}}</a> 
+        <a (click)="logout()">Log Out</a>
+        <a routerLink="">{{ sellerName | titlecase }}</a>
       </li>
     </ul>
   </div>

@@ -1,0 +1,38 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  /* bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute; */
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+.footer p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}

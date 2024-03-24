@@ -5,7 +5,8 @@
     <!-- Set the background color of each NgbSlide to black -->
     <div class="ngb-slide-content">
       <div class="picsum-img-wrapper">
-        <img class="product-header-image" src="{{ item.image }}" alt="Random slide image" />
+         <a routerLink="/details/{{item.id}}"> <img class="product-header-image" src="{{item.image}}" alt="Random first slide">
+     </a>
       </div>
       <div class="carousel-caption">
         <h3>{{ item.name }}</h3>
@@ -19,7 +20,7 @@
 
 
 <div class="product-list-wrapper">
-  <h1 class="section-title">Trendy Products</h1>
+  <h1 class="section-title">Trendy Books</h1>
   <div class="row">
     <div class="col-sm-3" *ngFor="let item of trendyBooks">
       <div class="product-item">

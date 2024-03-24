@@ -1,0 +1,60 @@
+.user-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.sign-up {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.sign-up h1 {
+  text-align: center;
+  color: #18725e;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.invalid-input {
+  color: red;
+  font-size: 15px;
+}
+.form-button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.sign-up p {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Optional: Style links
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+ */
