@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from '../services/book.service';
-import { book } from '../data-type';
+import { book, cart } from '../data-type';
 import { waitForAsync } from '@angular/core/testing';
 
 @Component({
@@ -13,6 +13,7 @@ export class ProductDetailsComponent {
   bookData: undefined | book;
   productQuantity: number = 1;
   removeCart = false;
+  cartData: book | undefined;
 
   constructor(private activeRoute: ActivatedRoute, private book: BookService) {}
 
@@ -33,6 +34,22 @@ export class ProductDetailsComponent {
             this.removeCart = false;
           }
         }
+
+        let user = localStorage.getItem('user');
+        if (user) {
+          let userId = user && JSON.parse(user).id;
+          this.book.getCartList(userId);
+
+          this.book.cartData.subscribe((result) => {
+            let item = result.filter(
+              (item: book) => bookId?.toString() === item.bookId?.toString()
+            );
+            if (item.length) {
+              this.cartData = item[0];
+              this.removeCart = true;
+            }
+          });
+        }
       });
   }
 
@@ -44,29 +61,44 @@ export class ProductDetailsComponent {
     }
   }
   addCart() {
- 
     if (this.bookData) {
       this.bookData.quantity = this.productQuantity;
       if (!localStorage.getItem('user')) {
-      console.warn(this.bookData);
-      this.book.localAddCart(this.bookData);
-      this.removeCart = true;
-    }
-    else{
-      console.warn("user is login");
-      
-      let user= localStorage.getItem('user');
-      let userId=user && JSON.parse(user).id;
-      console.log(userId);
-      let cartData={
-        ...this.bookData,userId
+        this.book.localAddCart(this.bookData);
+        this.removeCart = true;
+      } else {
+        let user = localStorage.getItem('user');
+        let userId = user && JSON.parse(user).id;
+        let cartData: cart = {
+          ...this.bookData,
+          userId,
+          bookId: this.bookData.id,
+        };
+        delete cartData.id;
+
+        this.book.addToCart(cartData).subscribe((result) => {
+          if (result) {
+            alert('Book is added in Cart.');
+            this.book.getCartList(userId); //40
+            this.removeCart = true; //40
+          }
+        });
       }
-      console.warn(cartData)
     }
-  }
   }
   removeToCart(bookId: number) {
- this.book.removeItemFromCart(bookId);
-       this.removeCart = false;
+    if (!localStorage.getItem('user')) {
+      this.book.removeItemFromCart(bookId);
+    } else {
+ 
+
+      this.cartData &&
+        this.book.removeToCart(this.cartData.id).subscribe((result) => {
+          let user = localStorage.getItem('user');
+          let userId = user && JSON.parse(user).id;
+          this.book.getCartList(userId);
+        });
+    }
+    this.removeCart = false;
   }
 }

@@ -30,6 +30,7 @@ export class HeaderComponent {
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData.name;
           this.menuType = 'user';
+          this.book.getCartList(userData.id)
         } else {
           console.warn('outside seller area');
           this.menuType = 'default';
@@ -40,9 +41,9 @@ export class HeaderComponent {
     if (cartData) {
       this.cartItem = JSON.parse(cartData).length;
     }
-    this.book.cartData.subscribe((items)=>{
-      this.cartItem=items.length
-    })
+    this.book.cartData.subscribe((items) => {
+      this.cartItem = items.length;
+    });
   }
 
   logout() {
@@ -52,6 +53,7 @@ export class HeaderComponent {
   userLogout() {
     localStorage.removeItem('user');
     this.route.navigate(['/user-auth']);
+    this.book.cartData.emit([]);
   }
   searchBook(query: KeyboardEvent) {
     const element = query.target as HTMLInputElement;

@@ -28,7 +28,7 @@
 
 .invalid-input {
   color: red;
-  font-size: 15px;
+  font-size: 20px;
 }
 .form-button[disabled] {
   background-color: #ccc;

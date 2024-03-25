@@ -36,13 +36,13 @@
 
   <div *ngIf="showLogin" class="sign-up">
     <h1>User Login</h1>
-    <p style="color: #be2727">{{ authError }}</p>
+    <p style="color: #be2727">{{ authorizationError }}</p>
     <form
       #userLogin="ngForm"
       class="common-form"
-      (ngSubmit)="login(userLogin.value)"
+      (ngSubmit)="Login(userLogin.value)"
     >
-      <p>{{ authError }}</p>
+
       <input
         type="text"
         class="form-input"

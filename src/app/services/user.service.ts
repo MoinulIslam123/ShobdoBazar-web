@@ -17,7 +17,7 @@ export class UserService {
       .subscribe((result) => {
         console.warn(result);
         if (result) {
-   localStorage.setItem('user', JSON.stringify(result.body));
+          localStorage.setItem('user', JSON.stringify(result.body));
           this.router.navigate(['/']);
         }
       });
@@ -31,15 +31,16 @@ export class UserService {
       )
       .subscribe((result) => {
         if (result && result.body?.length) {
-          this.invalidUserAuth.emit(true);
+          this.invalidUserAuth.emit(false);
           console.warn(result);
           localStorage.setItem('user', JSON.stringify(result.body[0]));
           this.router.navigate(['/']);
         } else {
-          this.invalidUserAuth.emit(false);
+          this.invalidUserAuth.emit(true);
         }
       });
   }
+
   userAuthReload() {
     if (localStorage.getItem('user')) {
       this.router.navigate(['/']);
