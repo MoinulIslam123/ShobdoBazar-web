@@ -1,0 +1,23 @@
+<div class="product-list-wrapper">
+  <h1 class="section-title"> All Books For Sell</h1>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let item of allBooks">
+      <div class="product-item">
+        <img class="product-image" src="{{ item.image }}" alt="{{ item.name }}">
+        <div class="product-details">
+          <h6 class="product-name">{{ item.name }}</h6>
+          <div class="product-price">
+            <h6>Price: {{ item.price }} Taka</h6>
+          </div>
+          <div class="product-category">
+            <h6>Category: {{ item.category }}</h6>
+          </div>
+        </div>
+        <div class="product-actions">
+          <a class="btn-details" routerLink="/details/{{ item.id }}">View Details</a>
+          <button class="btn-add-to-cart" (click)="addCart(item)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -32,6 +32,10 @@ export class BookService {
   trendyBooks() {
     return this.http.get<book[]>('http://localhost:3000/books?_limit=8');
   }
+  allBooks() {
+    return this.http.get<book[]>('http://localhost:3000/books');
+  }
+
   searchBook(query: string) {
     return this.http.get<book[]>(`http://localhost:3000/books?q=${query}`);
   }
