@@ -53,6 +53,7 @@ const routes: Routes = [
   {
     component: CartPageComponent,
     path: 'cart-page',
+
   },
   {
     component: CheckoutComponent,

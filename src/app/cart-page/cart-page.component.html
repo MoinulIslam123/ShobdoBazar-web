@@ -13,7 +13,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">{{cart.name}}</h6>
                             <p class="card-text">Price: {{cart.price}}</p>
                             <p class="card-text">Quantity: {{cart.quantity}}</p>
-                            <button class="btn btn-danger" >Remove</button>
+                            <button class="btn btn-danger" (click)="removeToCart(cart.id)" >Remove</button>
                         </div>
                     </div>
                 </div>

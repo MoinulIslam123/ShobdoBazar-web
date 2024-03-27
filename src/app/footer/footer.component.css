@@ -1,11 +1,11 @@
+/* Footer Styles */
 .footer {
   background-color: #f8f9fa;
-  padding: 20px;
+  /* padding: 50px; */
   text-align: center;
-  /* bottom: 0;
-  right: 0;
-  left: 0;
-  position: absolute; */
+  position: fixed;
+  bottom: 0;
+width: 100%;
 }
 
 .footer-links {
@@ -15,7 +15,7 @@
 
 .footer-links li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 40px;
 }
 
 .footer-links li:last-child {
@@ -32,7 +32,7 @@
 }
 
 .footer p {
-  margin-top: 20px;
-  font-size: 14px;
+  /* margin-top: 20px; */
+  font-size: 20px;
   color: #666;
 }

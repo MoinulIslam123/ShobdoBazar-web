@@ -14,14 +14,14 @@ export class MyOrderComponent {
   ngOnInit(): void {
     this.getOrderList();
   }
-  // cancelOrder(orderId: number | undefined) {
-  //   orderId &&
-  //     this.book.cancelOrder(orderId).subscribe((result) => {
-  //       if (result) {
-  //         this.getOrderList();
-  //       }
-  //     });
-  // }
+  cancelOrder(orderId: number | undefined) {
+    orderId &&
+      this.book.cancelOrder(orderId).subscribe((result) => {
+        if (result) {
+          this.getOrderList();
+        }
+      });
+  }
   getOrderList() {
     this.book.orderList().subscribe((result) => {
       this.orderData = result;

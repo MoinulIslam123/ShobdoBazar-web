@@ -39,11 +39,11 @@ export class CheckoutComponent {
         id: undefined,
       };
 
-      // this.cartData?.forEach((item) => {
-      //   setTimeout(() => {
-      //     item.id && this.book.deleteCartItems(item.id);
-      //   }, 700);
-      // });
+      this.cartData?.forEach((item) => {
+        setTimeout(() => {
+          item.id && this.book.deleteCartItems(item.id);
+        }, 700);
+      });
 
       this.book.orderNow(orderData).subscribe((result) => {
         console.warn(result);
@@ -54,7 +54,7 @@ export class CheckoutComponent {
           setTimeout(() => {
             this.orderMsg = undefined;
             this.router.navigate(['my-order']);
-          }, 1000);
+          }, 3000);
         }
       });
     }

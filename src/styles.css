@@ -12,10 +12,15 @@ body {
   background-color: var(--primary-color);
   color: white;
 } */
-/* .container {
-  margin-left: 3%;
-  margin-right: 3%;
-} */
+.box {
+margin-left: 3%;
+margin-right: 3%;
+ 
+
+}
+
+
+
 
 .common-form {
   display: flex;

@@ -1,6 +1,6 @@
 <nav class="nav">
   <h1><a routerLink="">শব্দবাজার</a></h1>
-  <div *ngIf="menuType === 'default'" class="search-bar">
+  <div *ngIf="menuType === 'default' || menuType === 'user'" class="search-bar">
     <input
       type="text"
       #searchInput
@@ -26,7 +26,7 @@
 
     <ul *ngSwitchCase="'user'">
       <li>
-        <a routerLink="seller-auth">Seller</a>
+        <!-- <a routerLink="seller-auth">Seller</a> -->
         <a routerLink="/">Home</a>
         <a routerLink="my-order">My Orders</a>
         <a routerLink="cart-page">Cart ({{cartItem}})</a>

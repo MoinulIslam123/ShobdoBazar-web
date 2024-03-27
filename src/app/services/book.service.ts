@@ -95,4 +95,14 @@ export class BookService {
       'http://localhost:3000/order?userId=' + userData.id
     );
   }
+  deleteCartItems(cartId: number) {
+    return this.http
+      .delete('http://localhost:3000/cart/' + cartId)
+      .subscribe((result) => {
+        this.cartData.emit([]);
+      });
+  }
+  cancelOrder(orderId: number) {
+    return this.http.delete('http://localhost:3000/order/' + orderId);
+  }
 }
