@@ -15,8 +15,8 @@ export class HomeComponent {
     this.book.popularBook().subscribe((data) => {
       this.popularBook = data;
     });
-     this.book.trendyBooks().subscribe((data) => {
-       this.trendyBooks = data;
-     });
+    this.book.trendyBooks().subscribe((data) => {
+      this.trendyBooks = data;
+    });
   }
 }
