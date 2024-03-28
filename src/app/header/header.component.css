@@ -19,8 +19,8 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  /* margin-bottom: 20px; */
+  /* border-radius: 5px; */
 }
 
 .nav h1 {

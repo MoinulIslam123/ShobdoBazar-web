@@ -78,3 +78,36 @@
     background-color: #29796e;
   color: #fff; /* Darken primary color on hover */
 }
+
+
+.head {
+    background-image: url('/assets/images/home.jpeg'); /* Replace with your image file */
+    background-size: cover;
+    background-color: rgba(192, 192, 192, 0.7); /* Adjust the alpha value (0.7 in this case) */
+    background-blend-mode: overlay; 
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+
+.aa{
+    
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4cafa7;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    
+}
+
+.pp{
+    font-size: 20px;
+    font-style: oblique ;
+}
