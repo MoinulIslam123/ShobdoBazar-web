@@ -6,16 +6,15 @@
 
 .ngb-slide-content {
   background-color: rgb(
-    30,
-    63,
-    55
+    59,
+    109,
+    96
   ); /* Set background color of NgbSlide to black */
 }
 
 .product-list-wrapper {
   padding: 20px;
   margin-top: 50px;
-  
 }
 
 .section-title {
@@ -75,39 +74,60 @@
 
 .btn-details:hover,
 .btn-add-to-cart:hover {
-    background-color: #29796e;
+  background-color: #29796e;
   color: #fff; /* Darken primary color on hover */
 }
 
-
 .head {
-    background-image: url('/assets/images/home.jpeg'); /* Replace with your image file */
-    background-size: cover;
-    background-color: rgba(192, 192, 192, 0.7); /* Adjust the alpha value (0.7 in this case) */
-    background-blend-mode: overlay; 
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(0, 0, 0);
-    text-align: center;
+  background-image: url("/assets/images/home.jpeg"); /* Replace with your image file */
+  background-size: cover;
+  background-color: rgba(
+    192,
+    192,
+    192,
+    0.7
+  ); /* Adjust the alpha value (0.7 in this case) */
+  background-blend-mode: overlay;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
-
-.aa{
-    
-        display: inline-block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #4cafa7;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-    
+.aa {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4cafa7;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-.pp{
-    font-size: 20px;
-    font-style: oblique ;
+.pp {
+  font-size: 20px;
+  font-style: oblique;
+}
+
+.category {
+  border: 2px solid #738b73;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #d1d1d1;
+  margin-bottom: 1rem;
+}
+.user-title {
+  color: #272727;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+.description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+  font-family: "Georgia", serif;
 }

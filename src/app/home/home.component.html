@@ -1,46 +1,82 @@
 <div class="head">
-    <div class="header-content">
-        <h1>Welcome to Shobdo-Bazar </h1>
-        <p class="pp">
-"Embark on a literary journey where every page turns into an adventure – experience the magic of our exclusive book selling platform."</p>
-     
-    </div>
+  <div class="header-content">
+    <h1>Welcome to Shobdo-Bazar</h1>
+    <p class="pp">
+      "Embark on a literary journey where every page turns into an adventure –
+      experience the magic of our exclusive book selling platform."
+    </p>
+  </div>
 </div>
 
-
 <div class="py-5 px-5 mt-5 rounded container-lg text-center g-4">
-  <h2 class="user-title">Who can use</h2>
-  <p class="description">Category of users and their description</p>
+  <div class="category">
+    <h2 class="user-title">Who can use</h2>
+    <p class="description">Category of users and their description</p>
+  </div>
+
   <div class="d-flex justify-content-between">
-    <div class="card" style="width: 45%;">
-      <img src="assets/images/seller.jpg" class="card-img-top img-fluid" alt="...">
+    <div class="card" style="width: 45%">
+      <img
+        src="assets/images/seller.jpg"
+        class="card-img-top img-fluid"
+        alt="..."
+      />
       <div class="card-body">
         <h5 class="card-title">Seller Panel</h5>
-        <p class="card-text">"The seller panel on our bookselling platform empowers individuals and businesses to curate compelling profiles, meticulously showcasing their vast inventory, expertise in specific genres, and unique selling propositions. Sellers have the flexibility to set pricing strategies, manage availability, and curate schedules to align seamlessly with their business objectives."</p>
-        <i class="bi bi-arrow-right-circle-fill " style="font-size:25px; color: rgb(10, 157, 231);"></i>
+        <p class="card-text">
+          "The seller panel on our bookselling platform empowers individuals and
+          businesses to curate compelling profiles, meticulously showcasing
+          their vast inventory, expertise in specific genres, and unique selling
+          propositions. Sellers have the flexibility to set pricing strategies,
+          manage availability, and curate schedules to align seamlessly with
+          their business objectives."
+        </p>
+        <i
+          class="bi bi-arrow-right-circle-fill"
+          style="font-size: 25px; color: rgb(10, 157, 231)"
+        ></i>
       </div>
     </div>
-    <div class="card" style="width: 45%;">
-      <img src="assets/images/user.jpg" class="card-img-top img-fluid" alt="...">
+    <div class="card" style="width: 45%">
+      <img
+        src="assets/images/user.jpg"
+        class="card-img-top img-fluid"
+        alt="..."
+      />
       <div class="card-body">
         <h5 class="card-title">User/Buyer Panel</h5>
-        <p class="card-text">"The user panel on our bookselling platform offers a personalized gateway for book enthusiasts to explore, discover, and engage with an extensive collection of literature. Catering to both students and parents alike, our user panel simplifies the book-buying journey, ensuring a seamless and enriching experience for all."</p>
-        <i class="bi bi-arrow-right-circle-fill" style="font-size:25px; color: rgb(10, 157, 231);"></i>
+        <p class="card-text">
+          "The user panel on our bookselling platform offers a personalized
+          gateway for book enthusiasts to explore, discover, and engage with an
+          extensive collection of literature. Catering to both students and
+          parents alike, our user panel simplifies the book-buying journey,
+          ensuring a seamless and enriching experience for all."
+        </p>
+        <i
+          class="bi bi-arrow-right-circle-fill"
+          style="font-size: 25px; color: rgb(10, 157, 231)"
+        ></i>
       </div>
     </div>
   </div>
 </div>
 
- 
- 
- <h1 style="text-align: center;">Popular Based on User</h1>
+<div class="category">
+  <h1 style="text-align: center">Popular Based on User</h1>
+</div>
+
 <ngb-carousel class="container" *ngIf="popularBook">
   <ng-template *ngFor="let item of popularBook" ngbSlide>
     <!-- Set the background color of each NgbSlide to black -->
     <div class="ngb-slide-content">
       <div class="picsum-img-wrapper">
-         <a routerLink="/details/{{item.id}}"> <img class="product-header-image" src="{{item.image}}" alt="Random first slide">
-     </a>
+        <a routerLink="/details/{{ item.id }}">
+          <img
+            class="product-header-image"
+            src="{{ item.image }}"
+            alt="Random first slide"
+          />
+        </a>
       </div>
       <div class="carousel-caption">
         <h3>{{ item.name }}</h3>
@@ -52,13 +88,18 @@
   </ng-template>
 </ngb-carousel>
 
-
-<div class="product-list-wrapper">
+<div class="category">
   <h1 class="section-title">Trendy Books</h1>
+</div>
+<div class="product-list-wrapper">
   <div class="row">
     <div class="col-sm-3" *ngFor="let item of trendyBooks">
       <div class="product-item">
-        <img class="product-image" src="{{ item.image }}" alt="{{ item.name }}">
+        <img
+          class="product-image"
+          src="{{ item.image }}"
+          alt="{{ item.name }}"
+        />
         <div class="product-details">
           <h6 class="product-name">{{ item.name }}</h6>
           <div class="product-price">
@@ -69,12 +110,12 @@
           </div>
         </div>
         <div class="product-actions">
-          <a class="btn-details" routerLink="/details/{{ item.id }}">View Details</a>
-          <button class="btn-add-to-cart" >Add to Cart</button>
+          <a class="btn-details" routerLink="/details/{{ item.id }}"
+            >View Details</a
+          >
+          <button class="btn-add-to-cart">Add to Cart</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-    
-
