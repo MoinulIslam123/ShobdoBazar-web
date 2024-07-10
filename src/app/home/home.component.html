@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="py-5 px-5 mt-5 rounded container-lg text-center g-4">
+<div class="py-5 px-6 mt-6 rounded container-lg text-center g-4">
   <div class="category">
     <h2 class="user-title">Who can use</h2>
     <p class="description">Category of users and their description</p>
@@ -61,7 +61,10 @@
   </div>
 </div>
 
-<div class="category">
+<div
+  class="popular_book py-3 px-2 mt-2 rounded container-lg text-center g-4"
+  style="width: 81rem"
+>
   <h1 style="text-align: center">Popular Based on User</h1>
 </div>
 
@@ -88,10 +91,10 @@
   </ng-template>
 </ngb-carousel>
 
-<div class="category">
+<!-- <div class="product-list-wrapper">
+  <div class="category">
   <h1 class="section-title">Trendy Books</h1>
 </div>
-<div class="product-list-wrapper">
   <div class="row">
     <div class="col-sm-3" *ngFor="let item of trendyBooks">
       <div class="product-item">
@@ -118,4 +121,59 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<section class="product_slider bg-white mx-auto my-3 py-1 align-items-center">
+  <div
+    class="text-head fw-bold fs-3 d-flex justify-content-between align-items-center"
+  
+    >
+    <span class="tb">Trendy Books</span>
+    <!-- <button class="text m-0 text-start px-3 py-4 text-nowrap">View All</button> -->
+  </div>
+
+  <div class="container-fluid position-relative">
+    <div class="slider_wrap d-flex align-items-center">
+      <div class="slider_main text-nowrap d-flex" #slider>
+        <div
+          class="item col-md-4 col-sm-6 col-xs-12 mb-3"
+          *ngFor="let item of trendyBooks"
+        >
+          <div class="card" style="width: 14rem">
+            <div class="img_card">
+              <img class="card-image" [src]="item.image" [alt]="item.name" />
+            </div>
+            <div class="details-container">
+              <div class="name-container text-wrap h-50">
+                <p>
+                  {{ item.name }}
+                  <span class="company-name">({{ item.category }})</span>
+                </p>
+                <div class="product-price">
+                  <h6>Price: {{ item.price }} Taka</h6>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="product-actions">
+              <a class="btn-details" [routerLink]="['/details', item.id]">View Details</a>
+              <button class="btn-add-to-cart">Add to Cart</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev carousel-button"
+      type="button"
+      (click)="prev()"
+    >
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button
+      class="carousel-control-next carousel-button"
+      type="button"
+      (click)="next()"
+    >
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</section>
