@@ -1,23 +1,83 @@
+<!-- <div class="product-list-wrapper">
+  <h1 class="section-title">All Books For Sell</h1>
+  <div class="col-5-responsive">
+    <div class="mb-4 ml-md-3" style="margin-left: 3rem">
+      <h2 class="text-head fw-bold fs-3">
+        All Books For Sell
+      </h2>
+      <hr class="line" />
+      <div class="row">
+        <ng-container *ngFor="let item of allBooks">
+          <div class="col-md-3 col-sm-6 col-xs-12 mb-3">
+            <div class="card">
+              <div class="card-look">
+                <img
+                  class="card-img-top"
+                  src="{{ item.image }}"
+                  alt="{{ item.name }}"
+                />
+              </div>
+
+              <div class="card-body">
+                <h6 class="card-title">
+                  {{ item.name }} (
+                    <span class="category-name">{{ item.category }}</span>
+                   )
+                </h6>
+                <div class="product-price">
+                  <h6>Price: {{ item.price }} Taka</h6>
+                </div>
+              
+              </div>
+              <div class="product-actions">
+              <a class="btn-details" routerLink="/details/{{ item.id }}"
+                >View Details</a
+              >
+              <button class="btn-add-to-cart" (click)="addCart(item)">
+                Add to Cart
+              </button>
+            </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 <div class="product-list-wrapper">
-  <h1 class="section-title"> All Books For Sell</h1>
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let item of allBooks">
-      <div class="product-item">
-        <img class="product-image" src="{{ item.image }}" alt="{{ item.name }}">
-        <div class="product-details">
-          <h6 class="product-name">{{ item.name }}</h6>
-          <div class="product-price">
-            <h6>Price: {{ item.price }} Taka</h6>
+  <h1 class="section-title">All Books For Sell</h1>
+  <div class="product_slider bg-white mx-auto py-3 align-items-center">
+    
+      <h2 class="text-head fw-bold fs-3">All Books For Sell</h2>
+      <hr class="line" />
+      <div class="grid-container">
+      <div class="grid-item" *ngFor="let item of allBooks">
+        
+          <div class="card">
+            <div class="card-look">
+              <img class="card-img-top" [src]="item.image" [alt]="item.name" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">
+                {{ item.name }}
+                <span class="category-name">({{ item.category }})</span>
+              </h3>
+              <div class="product-price">
+                <h6>Price: {{ item.price }} Taka</h6>
+              </div>
+            </div>
+            <div class="product-actions">
+              <a class="btn-details" [routerLink]="['/details', item.id]"
+                >View Details</a
+              >
+              <button class="btn-add-to-cart" (click)="addCart(item)">
+                Add to Cart
+              </button>
+            </div>
           </div>
-          <div class="product-category">
-            <h6>Category: {{ item.category }}</h6>
-          </div>
-        </div>
-        <div class="product-actions">
-          <a class="btn-details" routerLink="/details/{{ item.id }}">View Details</a>
-          <button class="btn-add-to-cart" (click)="addCart(item)">Add to Cart</button>
         </div>
       </div>
     </div>
   </div>
-</div>
+

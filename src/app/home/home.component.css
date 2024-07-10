@@ -168,7 +168,9 @@
   height: 12rem;
   position: relative;
 }
-
+.category-name{
+   color: #558bb4;
+}
 .carousel-button {
   position: absolute;
   top: 50%;
